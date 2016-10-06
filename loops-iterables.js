@@ -71,8 +71,6 @@ function isVowel(symbol){
 
    	return true
 
-
-
 }
 
 console.assert(isVowel(0) === false);
@@ -90,6 +88,9 @@ console.assert(isVowel("E") === true);
  * string "books".
  */
 
+var reverse = function (str) {
+	return str.split('').reverse().join('');
+}
 
 console.assert(reverse("books") === "skoob")
 console.assert(reverse("we don't want no trouble") === "elbuort on tnaw t'nod ew")
@@ -104,6 +105,36 @@ console.assert(reverse("we don't want no trouble") === "elbuort on tnaw t'nod ew
  * - for every number that is a multiple of 5 (but not 3), return "buzz"
  * - for every number that is a multiple of 3 and 5, return "fizzbuzz"
  */
+
+ // input is number and output is a string
+
+var fizzbuzz = function (fizzBuzzNum){
+	
+	var outputStr = '' 
+	var iter = 1
+
+	while (iter < fizzBuzzNum+1){
+
+		if(!(iter%3 === 0) && !(iter%5 ===0))
+			outputStr += '.'
+
+
+		if( (iter%3 === 0) && !(iter%5 ===0))
+			outputStr += 'fizz'
+
+
+		if(!(iter%3 === 0) &&  (iter%5 ===0))
+			outputStr += 'buzz'
+
+
+		if( (iter%3 === 0) &&  (iter%5 ===0))
+			outputStr += 'fizzbuzz'
+
+		iter++
+	}
+	console.log(outputStr)
+	return outputStr
+}
 
 
 
@@ -123,6 +154,10 @@ console.assert(fizzbuzz(10) === "..fizz.buzzfizz..fizzbuzz")
 
 function findLongestWord(sentence){
     // YOUR CODE HERE
+
+	var words = sentence.split
+
+	for()
 }
 
 console.assert(findLongestWord("a book full of dogs") === "book")
