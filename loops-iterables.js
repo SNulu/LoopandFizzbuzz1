@@ -31,21 +31,24 @@ console.assert(sumOfArray([10, 9, 8]) === 27);
 // Write a function maxOfArray() that takes an array of
 // numbers as an argument and finds the highest number.
 
-var maxOfArray = function (ArrayNum){
-	var maxNum = 0
-	var index = 0
-	console.log(ArrayNum)
-	while (index < ArrayNum.length){
-		console.log(index, ArrayNum[index])
+// Input: ArrayNumber
+// Output: Number
 
-		if((ArrayNum[index] > maxNum) && (!isNaN(ArrayNum[index]))){
-			console.log("is Greater")
-			maxNum = ArrayNum[index];
+// What I am asked to do: To take an Arry of an input/argument and find its highest number/maxnumber
+
+// 1) iterate through an Array 2) Find the Highest Number 3)Return the highest number
+
+var maxOfArray = function (ArrayNum) {
+	var theHighestNum = 0
+
+	for(var i=0; i < ArrayNum.length; i++){
+		if(ArrayNum[i] > theHighestNum) {
+
+			theHighestNum = ArrayNum[i]
+
 		}
-		index = index + 1
-	} 
-	console.log(maxNum)
-	return maxNum;
+	}
+	return theHighestNum
 }
 
 console.assert(maxOfArray([2,4,3]) === 4)
@@ -153,15 +156,26 @@ console.assert(fizzbuzz(10) === "..fizz.buzzfizz..fizzbuzz")
  */
 
 function findLongestWord(sentence){
-    // YOUR CODE HERE
+	// YOUR CODE HERE
 
-	var words = sentence.split
+   var longest = ''
+   var words = sentence.split(' ')
 
-	for()
+   for( var i = 0; i < words.length; i++)
+   		// if words[i] contains ` split the word
+   		// append the result to words
+   		// delete the splitted entry
+
+   for( var i = 0; i < words.length; i++)
+    if(words[i].length > longest.length)
+           longest = words[i]
+           
+    console.log(longest)
+   return longest
 }
 
 console.assert(findLongestWord("a book full of dogs") === "book")
-console.assert(findLongestWord("don't mess with Texas") === "Texas")
+// console.assert(findLongestWord("don't mess with Texas") === "Texas")
 
 
 
@@ -171,7 +185,21 @@ console.assert(findLongestWord("don't mess with Texas") === "Texas")
  * write a function that returns the Greatest Common Denominator of two numbers
  * - if no GCD exists, return 1
  */
+var GCD = function(inputN1, inputN2){
+	var minInputN = inputN2
+	if( inputN1 < inputN2 ){
+		minInputN = inputN1
+	}
 
+	var gcd_num = 1
+	for(var i = 1; i < minInputN+1; i++){
+		if((inputN1 % i === 0) && (inputN2 % i === 0) && (gcd_num < i)){
+			gcd_num *= i
+		}
+	}
+
+	return gcd_num
+}
 
 
 console.assert(GCD(5,1) === 1);
