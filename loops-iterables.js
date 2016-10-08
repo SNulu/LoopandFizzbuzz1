@@ -42,6 +42,11 @@ var maxOfArray = function (ArrayNum) {
 	var theHighestNum = 0
 
 	for(var i=0; i < ArrayNum.length; i++){
+		// if the number i-th in the array is not a number
+		if(isNaN(ArrayNum[i])){
+			// return NaN
+			return NaN
+		}
 		if(ArrayNum[i] > theHighestNum) {
 
 			theHighestNum = ArrayNum[i]
@@ -53,7 +58,7 @@ var maxOfArray = function (ArrayNum) {
 
 console.assert(maxOfArray([2,4,3]) === 4)
 console.assert(maxOfArray([10,9,8,100,7,6]) === 100)
-// console.assert(isNaN(maxOfArray([1,2,'bucklemyshoe'])))
+console.assert(isNaN(maxOfArray([1,2,'bucklemyshoe'])))
 
 /**
  * PART 2
@@ -162,7 +167,7 @@ function findLongestWord(sentence){
    var words = sentence.split(' ')
 
    for( var i = 0; i < words.length; i++)
-   		// if words[i] contains ` split the word
+   		// if words[i] contains ` split the word 
    		// append the result to words
    		// delete the splitted entry
 
